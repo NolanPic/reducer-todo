@@ -30,6 +30,12 @@ function App() {
     });
   };
 
+  const clearCompleted = () => {
+    dispatch({
+      type: 'CLEAR_COMPLETED'
+    });
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -38,6 +44,7 @@ function App() {
           items={state.todos}
           completeTodo={completeTodo}
         />
+        <button onClick={clearCompleted}>Clear completed</button>
       </header>
     </div>
   );
