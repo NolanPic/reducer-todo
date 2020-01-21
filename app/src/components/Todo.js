@@ -4,13 +4,14 @@ const Todo = ({ todo, completeTodo }) => {
 
     const { id, item, completed } = todo;
 
-    const liStyle = {
+    const styles = {
         textDecoration: completed ? 'line-through' : 'none',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        fontSize: '1.5rem'
     };
 
     return (
-        <li style={liStyle} onClick={() => completeTodo(id)}>{item}</li>
+        <li style={styles} onClick={() => completeTodo(id)}>{item}</li>
     );
 }
 

@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import './App.css';
+import './neumorphic.css';
 import { initialState, todoReducer } from './reducers/todoReducer';
 
 // components
@@ -36,16 +36,32 @@ function App() {
     });
   };
 
+  const appStyles = {
+    height: '90vh',
+    display: 'grid',
+    placeItems: 'center'
+  };
+
+  const innerStyles = {
+    display: 'grid',
+    placeItems: 'center'
+  };
+
+  const btnStyles = {
+    fontSize: '1.5rem',
+    border: '0'
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
+    <div style={appStyles}>
+      <div className="todo-app bubble-in" style={innerStyles}>
         <Form addTodo={addTodo} />
         <TodoList
           items={state.todos}
           completeTodo={completeTodo}
         />
-        <button onClick={clearCompleted}>Clear completed</button>
-      </header>
+        <button style={btnStyles} onClick={clearCompleted}>Clear completed</button>
+      </div>
     </div>
   );
 }
