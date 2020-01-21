@@ -7,6 +7,7 @@ const Form = ({ addTodo }) => {
     const handleSubmit = e => {
         e.preventDefault();
         addTodo(todoText);
+        setTodoText('');
     }
 
     return (
