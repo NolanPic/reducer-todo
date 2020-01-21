@@ -23,11 +23,21 @@ function App() {
     }
   };
 
+  const completeTodo = id => {
+    dispatch({
+      type: 'COMPLETE_TODO',
+      payload: id
+    });
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <Form addTodo={addTodo} />
-        <TodoList items={state.todos} />
+        <TodoList
+          items={state.todos}
+          completeTodo={completeTodo}
+        />
       </header>
     </div>
   );
